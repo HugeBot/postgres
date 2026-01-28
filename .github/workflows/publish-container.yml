@@ -32,7 +32,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest
-            type=raw,value=18
+            type=raw,value=18  # PostgreSQL version from pg18.dockerfile
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
