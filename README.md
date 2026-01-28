@@ -28,12 +28,14 @@ docker pull ghcr.io/hugebot/postgres:18
 ```bash
 docker run -d \
   --name hugebot-postgres \
-  -e POSTGRES_PASSWORD=tu_contraseña_segura \
+  -e POSTGRES_PASSWORD=<CAMBIA_ESTO_POR_UNA_CONTRASEÑA_SEGURA> \
   -e POSTGRES_DB=hugebot \
   -v postgres-data:/var/lib/postgresql/data \
   -p 5432:5432 \
   ghcr.io/hugebot/postgres:18
 ```
+
+> **⚠️ IMPORTANTE**: Reemplaza `<CAMBIA_ESTO_POR_UNA_CONTRASEÑA_SEGURA>` con una contraseña segura antes de usar en producción.
 
 ## Construcción
 
@@ -42,10 +44,6 @@ Para construir la imagen localmente:
 ```bash
 docker build -f pg18.dockerfile -t hugebot/postgres:18 .
 ```
-
-## Licencia
-
-MIT - Ver [LICENSE](LICENSE) para más detalles.
 
 ## Más Información
 
