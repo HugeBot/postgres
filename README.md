@@ -1,4 +1,4 @@
-# HugeBot PostgreSQL 18
+# Huge PostgreSQL 18
 
 Imagen Docker de PostgreSQL 18 personalizada para el bot HUGE en producción.
 
