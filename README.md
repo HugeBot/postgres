@@ -1,6 +1,6 @@
 # HUGE PostgreSQL 18
 
-Custom PostgreSQL 18 Docker image for HUGE bot production environments.
+Custom PostgreSQL 18 Docker image for HUGE production environments.
 
 ## Description
 
