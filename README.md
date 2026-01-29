@@ -1,53 +1,53 @@
-# Huge PostgreSQL 18
+# HUGE PostgreSQL 18
 
-Imagen Docker de PostgreSQL 18 personalizada para el bot HUGE en producción.
+Custom PostgreSQL 18 Docker image for HUGE bot production environments.
 
-## Descripción
+## Description
 
-Esta imagen Docker está diseñada específicamente para su uso en producción con [HUGE Bot](https://huge.bot). Contiene PostgreSQL 18 con extensiones adicionales necesarias para el funcionamiento del bot.
+This Docker image is specifically designed for production use with [HUGE](https://huge.bot). It contains PostgreSQL 18 with additional extensions required for the bot's operation.
 
-## Contenido de la Imagen
+## Image Contents
 
-- **Base**: PostgreSQL 18 (basado en Debian Trixie)
-- **Extensiones incluidas**:
-  - `pg_cron`: Programador de tareas cron nativo de PostgreSQL
-  - `pg_lexo`: Extensión personalizada para ordenamiento lexicográfico
+- **Base**: PostgreSQL 18 (based on Debian Trixie)
+- **Included Extensions**:
+  - `pg_cron`: Native PostgreSQL cron job scheduler
+  - `pg_lexo`: Custom extension for lexicographic ordering
 
-## Uso en Producción
+## Production Usage
 
-Esta imagen está configurada y optimizada para el entorno de producción de HUGE Bot. Se utiliza como la base de datos principal del sistema.
+This image is configured and optimized for HUGE's production environment. It serves as the main database system.
 
-### Pull de la Imagen
+### Pull the Image
 
 ```bash
 docker pull ghcr.io/hugebot/postgres:18
 ```
 
-### Ejecución
+### Running
 
 ```bash
 docker run -d \
   --name hugebot-postgres \
-  -e POSTGRES_PASSWORD=<CAMBIA_ESTO_POR_UNA_CONTRASEÑA_SEGURA> \
+  -e POSTGRES_PASSWORD=<CHANGE_THIS_TO_A_SECURE_PASSWORD> \
   -e POSTGRES_DB=hugebot \
   -v postgres-data:/var/lib/postgresql/data \
   -p 5432:5432 \
   ghcr.io/hugebot/postgres:18
 ```
 
-> **⚠️ IMPORTANTE**: Reemplaza `<CAMBIA_ESTO_POR_UNA_CONTRASEÑA_SEGURA>` con una contraseña segura antes de usar en producción.
+> **⚠️ IMPORTANT**: Replace `<CHANGE_THIS_TO_A_SECURE_PASSWORD>` with a secure password before using in production.
 
-## Construcción
+## Building
 
-Para construir la imagen localmente:
+To build the image locally:
 
 ```bash
 docker build -f pg18.dockerfile -t hugebot/postgres:18 .
 ```
 
-## Más Información
+## More Information
 
-- [HUGE Bot](https://huge.bot)
+- [HUGE](https://huge.bot)
 - [PostgreSQL Documentation](https://www.postgresql.org/docs/18/)
 - [pg_cron Extension](https://github.com/citusdata/pg_cron)
 - [pg_lexo Extension](https://github.com/Blad3Mak3r/pg_lexo)
